@@ -1,9 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Data;
+using WebAPI.Data.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
 
 var app = builder.Build();
 
@@ -40,6 +47,15 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast")
+.WithOpenApi();
+
+app.MapGet("/customer", () =>
+{
+    List<Customer> list = new List<Customer>();
+    list.Add(new Customer { Name = "",});
+    return list;
+})
+.WithName("GetCustomers")
 .WithOpenApi();
 
 app.Run();
