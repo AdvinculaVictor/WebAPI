@@ -8,6 +8,8 @@ namespace WebAPI.Data
         {
         }
 
+        public DbSet<Cliente> Clientes { get; set; }
+
         public DbSet<Customer> Customers { get; set; }
     }
 }
