@@ -51,8 +51,9 @@ app.MapGet("/weatherforecast", () =>
 
 app.MapGet("/customer", () =>
 {
+    var context = new AppDbContext();
     List<Cliente> list = new List<Cliente>();
-    list = AppDbContext.Clientes;
+    list = context.Clientes;
     // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
     // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return list;
