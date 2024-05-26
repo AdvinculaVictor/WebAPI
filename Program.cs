@@ -49,11 +49,11 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/customer", () =>
+app.MapGet("/customer", (AppDbContext context) =>
 {
-    var context = new AppDbContext();
+    var _context = context;
     List<Cliente> list = new List<Cliente>();
-    list = context.Clientes;
+    list = _context.Clientes;
     // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
     // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return list;
