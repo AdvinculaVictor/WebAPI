@@ -53,7 +53,7 @@ app.MapGet("/customer", (AppDbContext context) =>
 {
     var _context = context;
     List<Cliente> list = new List<Cliente>();
-    list = _context.Clientes.toList();
+    list = _context.Clientes.select().toList();
     // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
     // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return list;
