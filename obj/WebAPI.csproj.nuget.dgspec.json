@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\source\\repos\\Net\\NetCore\\WebAPI\\WebAPI.csproj": {}
+    "C:\\source\\repos\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\source\\repos\\Net\\NetCore\\WebAPI\\WebAPI.csproj": {
+    "C:\\source\\repos\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\source\\repos\\Net\\NetCore\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\source\\repos\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\source\\repos\\Net\\NetCore\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\source\\repos\\Net\\NetCore\\WebAPI\\obj\\",
+        "projectPath": "C:\\source\\repos\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\marlu\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\repos\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\marlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
