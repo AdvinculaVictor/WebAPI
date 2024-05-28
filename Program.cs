@@ -54,11 +54,18 @@ app.MapGet("/cliente", (AppDbContext context) =>
     var _context = context;
     List<Cliente> list = new List<Cliente>();
     list = _context.Cliente.ToList();
-    // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
-    // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return list;
 })
 .WithName("GetClientes")
+.WithOpenApi();
+
+app.MapGet("/cliente/clienteID", (int clienteID, AppDbContext context) =>
+{
+    var _context = context;
+    Cliente? cliente =  _context.Cliente.Find(clienteID);
+    return cliente;
+})
+.WithName("GetCliente")
 .WithOpenApi();
 
 app.MapPost("/cliente", (Cliente cliente, AppDbContext context) =>
@@ -66,8 +73,6 @@ app.MapPost("/cliente", (Cliente cliente, AppDbContext context) =>
     var _context = context;
     _context.Cliente.Add(cliente);
     _context.SaveChanges();
-    // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
-    // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return cliente;
 })
 .WithName("PostCliente")
