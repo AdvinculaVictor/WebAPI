@@ -49,7 +49,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapGet("/customer", (AppDbContext context) =>
+app.MapGet("/cliente", (AppDbContext context) =>
 {
     var _context = context;
     List<Cliente> list = new List<Cliente>();
@@ -58,7 +58,19 @@ app.MapGet("/customer", (AppDbContext context) =>
     // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
     return list;
 })
-.WithName("GetCustomers")
+.WithName("GetClientes")
+.WithOpenApi();
+
+app.MapPost("/cliente", (Cliente cliente, AppDbContext context) =>
+{
+    var _context = context;
+    _context.Cliente.Add(cliente);
+    _context.SaveChanges();
+    // list.Add(new Customer { Name = "Marla", Address = "Quintin González", City = "New York"});
+    // list.Add(new Customer { Name = "Desiree", Address = "Pioquinto Galiz", City = "Ayotla"});
+    return cliente;
+})
+.WithName("PostCliente")
 .WithOpenApi();
 
 app.Run();
